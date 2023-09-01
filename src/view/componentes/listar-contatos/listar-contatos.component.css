@@ -1,0 +1,23 @@
+.alinhamento-itens {
+    float: left;
+    margin-left: 1.2%;
+}
+
+.alinhamento-numero {
+    float: right;
+    margin-left: 1.2%;
+}
+
+.alinhamento-icones {
+    float: right;
+    padding: 0.5%;
+    margin-left: 1.2%;
+}
+
+#alinhamento-itens-icons {
+    padding: 0.2%;
+}
+
+.lista-contatos {
+    width: 100%;
+}

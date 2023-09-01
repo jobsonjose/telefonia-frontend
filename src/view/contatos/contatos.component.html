@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="menu-contatos">
+        <cp-menu-contatos></cp-menu-contatos>
+    </div>
+    <span class="p-fluid">
+        <p-autoComplete class="barra-busca" [(ngModel)]="contatoSelecionado" placeholder="Buscar Contato" [suggestions]="listaContatosTabela" 
+            (completeMethod)="filtrarContatos($event)" field="nome" [multiple]="true"></p-autoComplete>
+    </span>
+    <cp-listar-contatos (selecionandoContato)="obterContatoSelecionado($event)" [listaContatos]="listaContatosTabela"></cp-listar-contatos>
+    <div class="validacao-dados">
+        <p-fieldset legend="Dados do contato" *ngIf="contatoSelecionado.nome">
+            <cp-dados-contato (contatoSelecionado)="contatoSelecionado"></cp-dados-contato>
+        </p-fieldset>
+    </div>
+</div>

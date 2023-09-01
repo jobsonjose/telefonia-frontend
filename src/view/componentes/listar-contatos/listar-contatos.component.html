@@ -1,0 +1,15 @@
+<div class="card flex justify-content-center">
+    <p-listbox [options]="listaContatos" (onChange)="obterContatoSelecionado()" [(ngModel)]="contatoSelecionado" optionLabel="nome">
+        <ng-template let-contato pTemplate="item">
+            <div class="lista-contatos">
+                <i id="alinhamento-itens-icons" *ngIf="contato.ativo == 'S'"class="alinhamento-itens pi pi-user"></i>
+                <i id="alinhamento-itens-icons" *ngIf="contato.ativo == 'N'" class="alinhamento-itens pi pi-user-minus"></i>
+                <i *ngIf="contato.favorito == 'N' && contato.ativo == 'S'" class="alinhamento-icones pi pi-star"></i>
+                <i *ngIf="contato.favorito == 'S' && contato.ativo == 'S'" class="alinhamento-icones pi pi-star-fill"></i>
+                
+                <div class="alinhamento-itens">{{ contato.nome }}</div>
+                <span class="alinhamento-numero" >{{contato.celular | celularPipe}}</span>
+            </div>
+        </ng-template>
+    </p-listbox>
+</div>

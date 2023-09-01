@@ -1,0 +1,34 @@
+.campos-form {
+    width: 45%;
+    margin-top: 1.5%;
+}
+.campos-esqueda {
+    float: left;
+}
+
+.campos-direita {
+    float: right;
+}
+
+.btn-salvar {
+    float: right;
+    margin: 7% 1.5%;
+
+}
+
+.btn-acoes {
+    float: left;
+    margin-top: 6%;
+    margin-right: 11%;
+}
+
+.bloco-favorito {
+    float: right;
+    margin-top: 6%;
+    margin-right: 5%;
+}
+
+.controle-contato {
+    float: left;
+    width: 100%;
+}

@@ -1,0 +1,35 @@
+<p-messages *ngIf="!situacaoCadastro && contatoSelecionado.nome"></p-messages>
+<form [formGroup]="formContato" class="card flex flex-column md:flex-row gap-3">
+    <div class="p-inputgroup campos-form campos-esqueda">
+        <span class="p-inputgroup-addon">
+            <i *ngIf="this.formContato.get('ativo')?.value == 'S'" class="pi pi-user"></i>
+            <i *ngIf="this.formContato.get('ativo')?.value == 'N'" class="pi pi-user-minus"></i>
+        </span>
+        <input formControlName="nome" pInputText placeholder="Nome" />
+    </div>
+    <div class="p-inputgroup campos-form campos-direita">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-tablet"></i>
+        </span>
+        <input formControlName="celular" pInputText placeholder="Celular" />
+    </div>
+    <div class="p-inputgroup campos-form campos-esqueda">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-at"></i>
+        </span>
+        <input formControlName="email" pInputText placeholder="E-mail" />
+    </div>
+    <div class="p-inputgroup campos-form campos-direita">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-phone"></i>
+        </span>
+        <input formControlName="telefone" pInputText placeholder="Telefone" />
+    </div>
+    <div class="controle-contato">
+        <div *ngIf="contatoSelecionado.nome && situacaoCadastro" class="btn-acoes flex align-items-center justify-content-center">
+            <p-toast></p-toast>
+            <p-speedDial [model]="listaAcoesContato" type="circle" [radius]="80" buttonClassName="p-button-warning"></p-speedDial>
+        </div>
+        <p-button label="Salvar" class="btn-salvar" (click)="submeter()" styleClass="p-button-raised"></p-button>
+    </div>
+</form>

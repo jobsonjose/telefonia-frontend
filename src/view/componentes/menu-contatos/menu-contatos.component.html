@@ -1,0 +1,13 @@
+<p-sidebar [(visible)]="visibilidadeCadastroContato" [fullScreen]="true">
+    <p-fieldset legend="Adicionar Contato">
+        <cp-dados-contato [situacaoCadastro]="false"></cp-dados-contato>
+    </p-fieldset>
+</p-sidebar>
+
+
+<p-messages></p-messages>
+<div class="card">    
+    <p-tabMenu [model]="itensMenu" [activeItem]="menuAtivo"></p-tabMenu>
+</div>
+
+<p-button type="button" class="mr-2 btn-add-contato" (click)="visibilidadeCadastroContato = true" icon="pi pi-plus"></p-button>
